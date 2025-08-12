@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    const so = Number(prompt("Nhap mot so nguyen bat ky:"));
+if (!Number.isInteger(so)) {
+        document.write("Vui long nhap SO NGUYEN hop le.");
+    } else if (so > 0) {
+        document.write(`${so} lon hon 0`);
+    } else if (so < 0) {
+        document.write(`${so} nho hon 0`);
+    } else {
+        document.write(`${so} bang 0`);
+    }
+</script>
+</body>
+</html>

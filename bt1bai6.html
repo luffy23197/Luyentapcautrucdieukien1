@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+const doanhSo = Number(prompt("Nhap doanh so (don vi: trieu dong):"));
+if (!Number.isFinite(doanhSo) || doanhSo < 0) {
+        document.write("Vui long nhap doanh so hop le (>= 0).");
+    } else {let tyLe;
+        if (doanhSo < 100) {
+            tyLe = 5;
+        } else if (doanhSo <= 300) {
+            tyLe = 10;
+        } else {
+            tyLe = 20;
+        }
+const hoaHong = (doanhSo * tyLe) / 100;
+document.write(
+            `Doanh so: ${doanhSo.toFixed(2)} trieu — ` +
+            `Ty le: ${tyLe}% — ` +
+            `Hoa hong: <b>${hoaHong.toFixed(2)} trieu dong</b>`
+        );
+    }
+</script>
+</body>
+</html>

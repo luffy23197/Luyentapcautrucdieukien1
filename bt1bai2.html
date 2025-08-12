@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    const tuoi = Number(prompt("Nhap tuoi hoc sinh:"));
+    const tuoiToiThieu = 15;
+    if (Number.isNaN(tuoi) || tuoi <= 0) {
+        document.write("Vui long nhap tuoi hop le.");
+    } else if (tuoi >= tuoiToiThieu) {
+        document.write(`Tuoi ${tuoi} → Du dieu kien vao lop 10.`);
+    } else {
+        document.write(`Tuoi ${tuoi} → Khong du dieu kien vao lop 10.`);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    const so1 = Number(prompt("Nhap so nguyen thu nhat:"));
+    const so2 = Number(prompt("Nhap so nguyen thu hai:"));
+    const so3 = Number(prompt("Nhap so nguyen thu ba:"));
+
+    if (![so1, so2, so3].every(n => Number.isInteger(n))) {
+        document.write("Vui long nhap 3 so NGUYEN hop le.");
+    } else {
+        let lonNhat = so1;
+        if (so2 > lonNhat) lonNhat = so2;
+        if (so3 > lonNhat) lonNhat = so3;
+
+        document.write(`So lon nhat la: ${lonNhat}`);
+    }
+</script>
+</body>
+</html>

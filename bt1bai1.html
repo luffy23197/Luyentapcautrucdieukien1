@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    const soA = Number(prompt("Nhap so a:"));
+    const soB = Number(prompt("Nhap so b:"));
+    if (Number.isNaN(soA) || Number.isNaN(soB)) {
+        document.write("Vui long nhap so hop le.");
+    } else if (soB === 0) {
+        document.write("Khong the chia cho 0.");
+    } else if (soA % soB === 0) {
+        document.write(`${soA} chia het cho ${soB}.`);
+    } else {
+        document.write(`${soA} KHONG chia het cho ${soB}.`);
+    }
+</script>
+</body>
+</html>

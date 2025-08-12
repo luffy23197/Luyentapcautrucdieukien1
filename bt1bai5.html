@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<script>
+const diemKiemTra = Number(prompt("Nhap diem bai kiem tra (0-10):"));
+    const diemGiuaKy  = Number(prompt("Nhap diem thi giua ky (0-10):"));
+    const diemCuoiKy  = Number(prompt("Nhap diem thi cuoi ky (0-10):"));
+const hopLe = [diemKiemTra, diemGiuaKy, diemCuoiKy].every(
+        d => Number.isFinite(d) && d >= 0 && d <= 10
+    );
+    if (!hopLe) {
+        document.write("Vui long nhap 3 diem hop le trong khoang 0-10.");
+    } else {
+        const wKiemTra = 0.2, wGiuaKy = 0.3, wCuoiKy = 0.5;
+        const diemTB = diemKiemTra * wKiemTra + diemGiuaKy * wGiuaKy + diemCuoiKy * wCuoiKy;
+        let xepLoai = "";
+        if (diemTB >= 8.0) {
+            xepLoai = "Gioi";
+        } else if (diemTB >= 6.5) {
+            xepLoai = "Kha";
+        } else if (diemTB >= 5.0) {
+            xepLoai = "Trung binh";
+        } else if (diemTB >= 3.5) {
+            xepLoai = "Yeu";
+        } else {
+            xepLoai = "Kem";
+        }
+        document.write(
+            `Diem TB: ${diemTB.toFixed(2)} — Xep loai: <b>${xepLoai}</b>`
+        );
+    }
+</script>
+</body>
+</html>
