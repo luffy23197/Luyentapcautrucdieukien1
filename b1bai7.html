@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+<script>
+    const thueBao = +prompt("Thuê bao (đ/tháng):", "25000");
+    const soPhut  = +prompt("Tổng phút gọi:", "120");
+    const soSms   = +prompt("Số SMS:", "10");
+    const vat     = +prompt("VAT (%)", "10");
+    let cuocGoi;
+    if (soPhut <= 0) {
+        cuocGoi = 0;
+    } else if (soPhut <= 50) {
+        cuocGoi = soPhut * 700;
+    } else if (soPhut <= 200) {
+        cuocGoi = 50*700 + (soPhut - 50) * 500;
+    } else if (soPhut <= 400) {
+        cuocGoi = 50*700 + 150*500 + (soPhut - 200) * 400;
+    } else {
+        cuocGoi = 50*700 + 150*500 + 200*400 + (soPhut - 400) * 300;
+    }
+    const cuocSms = soSms * 300;
+    const truocThue = thueBao + cuocGoi + cuocSms;
+    let tienVat;
+    if (vat > 0) tienVat = truocThue * vat / 100;
+    else tienVat = 0;
+    const tong = truocThue + tienVat;
+    const vnd = n => n.toLocaleString("vi-VN") + " đ";
+    alert(
+        "Thuê bao: " + vnd(thueBao) + "\n" +
+        "Cước gọi: " + vnd(cuocGoi) + "\n" +
+        "Cước SMS: " + vnd(cuocSms) + "\n" +
+        "Tổng trước thuế: " + vnd(truocThue) + "\n" +
+        "VAT: " + vnd(tienVat) + "\n" +
+        "==> Tổng thanh toán: " + vnd(tong)
+    );
+</script>
+</body>
+</html>
